@@ -17,9 +17,14 @@ public class applyTransformTest : MonoBehaviour
         ShoulderAxis = BaseAxis.transform.Find("ShoulderAxis");
         ElbowAxis = ShoulderAxis.transform.Find("ElbowAxis");
 
-        Debug.Log("Base: " + BaseAxis.transform.eulerAngles.z);
-        Debug.Log("Shoulder: " + ShoulderAxis.transform.eulerAngles.z);
-        Debug.Log("Elbow: " + ElbowAxis.transform.eulerAngles.z);
+        Debug.Log("Global Base: " + BaseAxis.transform.eulerAngles.y);
+        Debug.Log("Local Base: " + BaseAxis.transform.localEulerAngles.y);
+
+        Debug.Log("Global Shoulder: " + ShoulderAxis.transform.eulerAngles.z);
+        Debug.Log("Local Shoulder: " + ShoulderAxis.transform.localEulerAngles.z);
+
+        Debug.Log("Global Elbow: " + ElbowAxis.transform.eulerAngles.z);
+        Debug.Log("Local Elbow: " + ElbowAxis.transform.localEulerAngles.z);
 
     }
 
@@ -27,34 +32,34 @@ public class applyTransformTest : MonoBehaviour
     void Update()
     {
         // BaseAxis
-        if(BaseAxis.transform.eulerAngles.y < 50 && BaseAxis.transform.eulerAngles.y >= 0)
+        if(BaseAxis.transform.localEulerAngles.y < 50 && BaseAxis.transform.localEulerAngles.y >= 0)
         {
-            BaseAxis.transform.eulerAngles += new Vector3(0, .5f, 0);
+            BaseAxis.transform.localEulerAngles += new Vector3(0, .5f, 0);
         }
         else
         {
-            BaseAxis.transform.eulerAngles -= new Vector3(0, 0, 0);     // do not move
+            BaseAxis.transform.localEulerAngles -= new Vector3(0, 0, 0);     // do not move
         }
 
         // ShoulderAxis
-        if (ShoulderAxis.transform.eulerAngles.z < 72 && ShoulderAxis.transform.eulerAngles.z >= 21)
+        if (ShoulderAxis.transform.localEulerAngles.z < 72 && ShoulderAxis.transform.localEulerAngles.z >= 21)
         {
-            ShoulderAxis.transform.eulerAngles += new Vector3(0, 0, .5f);
+            ShoulderAxis.transform.localEulerAngles += new Vector3(0, 0, .5f);
         }
         else
         {
-            ShoulderAxis.transform.eulerAngles -= new Vector3(0, 0, 0);     // do not move
+            ShoulderAxis.transform.localEulerAngles -= new Vector3(0, 0, 0);     // do not move
         }
 
         // ElbowAxis
-        Debug.Log("Elbow.z: " + ElbowAxis.transform.eulerAngles.z);
-        if (ElbowAxis.transform.eulerAngles.z <= 322 && ElbowAxis.transform.eulerAngles.z > 322-50)
+        Debug.Log("Elbow.z: " + ElbowAxis.transform.localEulerAngles.z);
+        if (ElbowAxis.transform.localEulerAngles.z <= 300 && ElbowAxis.transform.localEulerAngles.z > 250)
         {
-            ElbowAxis.transform.eulerAngles += new Vector3(0, 0, 0.5f);
+            ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, 0.5f);
         }
         else
         {
-            ElbowAxis.transform.eulerAngles -= new Vector3(0, 0, 0);     // do not move
+            ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, 0);     // do not move
         }
 
     }

@@ -1934,17 +1934,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 365eb60b5e8445744b19a481ce0bac8c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.1
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 365eb60b5e8445744b19a481ce0bac8c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.313227e-10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 365eb60b5e8445744b19a481ce0bac8c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.2
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 365eb60b5e8445744b19a481ce0bac8c,
         type: 3}
@@ -2007,6 +2007,11 @@ PrefabInstance:
       value: Braccio_Robot
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 365eb60b5e8445744b19a481ce0bac8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524948665714518904, guid: 365eb60b5e8445744b19a481ce0bac8c,
         type: 3}
       propertyPath: m_IsActive
       value: 0
