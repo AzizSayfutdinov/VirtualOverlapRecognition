@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 252154565}
   - component: {fileID: 252154564}
   - component: {fileID: 252154563}
+  - component: {fileID: 252154566}
   m_Layer: 0
   m_Name: WristRotationalInfoWindow
   m_TagString: Untagged
@@ -683,6 +684,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252154561}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &252154566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252154561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbaa51b5c5d2e8f4aa95ea0770dafda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &260776602
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +833,7 @@ GameObject:
   - component: {fileID: 515086666}
   - component: {fileID: 515086665}
   - component: {fileID: 515086664}
+  - component: {fileID: 515086667}
   m_Layer: 0
   m_Name: BaseInfoWindow
   m_TagString: Untagged
@@ -901,6 +915,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515086662}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &515086667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515086662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbaa51b5c5d2e8f4aa95ea0770dafda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &518986198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1454,7 @@ GameObject:
   - component: {fileID: 780204914}
   - component: {fileID: 780204913}
   - component: {fileID: 780204912}
+  - component: {fileID: 780204915}
   m_Layer: 0
   m_Name: ElbowInfoWindow
   m_TagString: Untagged
@@ -1509,6 +1536,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780204910}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &780204915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780204910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbaa51b5c5d2e8f4aa95ea0770dafda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793203522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,6 +3496,7 @@ GameObject:
   - component: {fileID: 1517577728}
   - component: {fileID: 1517577727}
   - component: {fileID: 1517577726}
+  - component: {fileID: 1517577729}
   m_Layer: 0
   m_Name: ShoulderInfoWindow
   m_TagString: Untagged
@@ -3538,6 +3578,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517577724}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1517577729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517577724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbaa51b5c5d2e8f4aa95ea0770dafda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1528154574
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,6 +4295,7 @@ GameObject:
   - component: {fileID: 1858102745}
   - component: {fileID: 1858102744}
   - component: {fileID: 1858102743}
+  - component: {fileID: 1858102746}
   m_Layer: 0
   m_Name: WristVerticalInfoWindow
   m_TagString: Untagged
@@ -4324,6 +4377,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858102741}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1858102746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858102741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbaa51b5c5d2e8f4aa95ea0770dafda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1864839890
 GameObject:
   m_ObjectHideFlags: 0

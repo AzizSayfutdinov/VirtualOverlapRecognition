@@ -13,6 +13,8 @@ public class levelOrientation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         // print global and local values
         Debug.Log("Global angle: " + transform.eulerAngles.z);
         Debug.Log("Local angle: " + transform.localEulerAngles.z);
