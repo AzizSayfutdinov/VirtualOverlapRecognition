@@ -52,7 +52,7 @@ public class applyTransformTest : MonoBehaviour
         }
 
         // ElbowAxis
-        Debug.Log("Local Elbow.z: " + ElbowAxis.transform.localEulerAngles.z);
+        // Debug.Log("Local Elbow.z: " + ElbowAxis.transform.localEulerAngles.z);
         // ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, 0.5f);
         if (ElbowAxis.transform.localEulerAngles.z <= 300 && ElbowAxis.transform.localEulerAngles.z > 250)
         {

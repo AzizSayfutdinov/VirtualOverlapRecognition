@@ -16,8 +16,8 @@ public class levelOrientation : MonoBehaviour
         
 
         // print global and local values
-        Debug.Log("Global angle: " + transform.eulerAngles.z);
-        Debug.Log("Local angle: " + transform.localEulerAngles.z);
+        // Debug.Log("Global angle: " + transform.eulerAngles.z);
+        // Debug.Log("Local angle: " + transform.localEulerAngles.z);
 
         if(transform.eulerAngles.z != 0)
         {
