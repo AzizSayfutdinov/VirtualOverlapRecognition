@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class levelOrientation : MonoBehaviour
 {
+    GameObject icon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +25,7 @@ public class levelOrientation : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
+
+
     }
 }

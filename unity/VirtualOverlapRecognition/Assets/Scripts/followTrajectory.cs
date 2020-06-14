@@ -50,6 +50,7 @@ public class followTrajectory : MonoBehaviour
         elbowStep = 180f / numberOfSteps;
         wristVerticalStep = 140f / numberOfSteps;
 
+
     }
 
     // Update is called once per frame
@@ -103,7 +104,7 @@ public class followTrajectory : MonoBehaviour
     void shoulderTrajectory()
     {
         // Shoulder from 60° to -60°
-        Debug.Log("Local Shoulder.z: " + (ShoulderAxis.transform.localEulerAngles.z));
+        // Debug.Log("Local Shoulder.z: " + (ShoulderAxis.transform.localEulerAngles.z));
         if (ShoulderAxis.transform.localEulerAngles.z >= 0 && ShoulderAxis.transform.localEulerAngles.z <= 60 ||
             ShoulderAxis.transform.localEulerAngles.z >= 300 && ShoulderAxis.transform.localEulerAngles.z <= 360)
         {
@@ -138,7 +139,7 @@ public class followTrajectory : MonoBehaviour
     void elbowTrajectory()
     {
         // Shoulder from 90° to -90°
-        Debug.Log("Local Elbow.z: " + (ElbowAxis.transform.localEulerAngles.z));
+        // Debug.Log("Local Elbow.z: " + (ElbowAxis.transform.localEulerAngles.z));
         if (ElbowAxis.transform.localEulerAngles.z >= 0 && ElbowAxis.transform.localEulerAngles.z <= 90 ||
             ElbowAxis.transform.localEulerAngles.z >= 270 && ElbowAxis.transform.localEulerAngles.z <= 360)
         {
@@ -174,7 +175,7 @@ public class followTrajectory : MonoBehaviour
     void wristVerticalTrajectory()
     {
         // Shoulder from 70° to -70°
-        Debug.Log("Local Wrist vertical.z: " + (WristVerticalAxis.transform.localEulerAngles.z));
+        // Debug.Log("Local Wrist vertical.z: " + (WristVerticalAxis.transform.localEulerAngles.z));
         if (WristVerticalAxis.transform.localEulerAngles.z >= 0 && WristVerticalAxis.transform.localEulerAngles.z <= 70 ||
             WristVerticalAxis.transform.localEulerAngles.z >= 290 && WristVerticalAxis.transform.localEulerAngles.z <= 360)
         {

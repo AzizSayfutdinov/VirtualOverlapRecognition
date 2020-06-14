@@ -503,8 +503,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8d5a425c0e1c64590e8ec5618b9d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconUpper: {fileID: 0}
-  iconLower: {fileID: 0}
+  iconUpperBase: {fileID: 0}
+  iconLowerBase: {fileID: 0}
+  iconUpperShoulder: {fileID: 0}
+  iconLowerShoulder: {fileID: 0}
+  iconUpperElbow: {fileID: 0}
+  iconLowerElbow: {fileID: 0}
+  iconUpperWristVertical: {fileID: 0}
+  iconLowerWristVertical: {fileID: 0}
   color: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &101457430
 GameObject:
@@ -4450,8 +4456,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8d5a425c0e1c64590e8ec5618b9d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconUpper: {fileID: 0}
-  iconLower: {fileID: 0}
+  iconUpperBase: {fileID: 0}
+  iconLowerBase: {fileID: 0}
+  iconUpperShoulder: {fileID: 0}
+  iconLowerShoulder: {fileID: 0}
+  iconUpperElbow: {fileID: 0}
+  iconLowerElbow: {fileID: 0}
+  iconUpperWristVertical: {fileID: 0}
+  iconLowerWristVertical: {fileID: 0}
   color: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &670652517
 GameObject:
@@ -15630,7 +15642,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2037900181}
   - component: {fileID: 2037900180}
-  - component: {fileID: 2037900182}
   - component: {fileID: 2037900183}
   m_Layer: 0
   m_Name: OverlapVisualWithIcon
@@ -15666,18 +15677,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2037900182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037900179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0135aea257f68d24abd80675452f7039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2037900183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15690,8 +15689,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8d5a425c0e1c64590e8ec5618b9d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconUpper: {fileID: 633973753}
-  iconLower: {fileID: 87782594}
+  iconUpperBase: {fileID: 633973753}
+  iconLowerBase: {fileID: 87782594}
+  iconUpperShoulder: {fileID: 1299652134}
+  iconLowerShoulder: {fileID: 692749437}
+  iconUpperElbow: {fileID: 1785475688}
+  iconLowerElbow: {fileID: 1223281597}
+  iconUpperWristVertical: {fileID: 1973966699}
+  iconLowerWristVertical: {fileID: 1593705166}
   color: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &2038107014
 GameObject:
