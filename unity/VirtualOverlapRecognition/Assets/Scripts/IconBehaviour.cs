@@ -58,6 +58,8 @@ public class IconBehaviour : MonoBehaviour
 
     private float colorIncrease;
 
+    private float scaling = 0.0025f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,6 +128,10 @@ public class IconBehaviour : MonoBehaviour
                 // Change direction if upper limit of 180° is reached
                 if (BaseAxis.transform.localEulerAngles.y > 180)
                     baseDir = !baseDir;
+
+                // scale
+                iconLowerBase.transform.localScale += new Vector3(scaling, scaling, scaling);
+                iconUpperBase.transform.localScale += new Vector3(scaling, scaling, scaling); 
             }
             else
             {
@@ -142,6 +148,11 @@ public class IconBehaviour : MonoBehaviour
                 // Check < 0 does not work, therefore check if within interval 350-360
                 if (BaseAxis.transform.localEulerAngles.y < 360 && BaseAxis.transform.localEulerAngles.y > 360 - tolerance)
                     baseDir = !baseDir;
+
+                // scale
+                iconLowerBase.transform.localScale -= new Vector3(scaling, scaling, scaling);
+                iconUpperBase.transform.localScale -= new Vector3(scaling, scaling, scaling);
+
             }
         }
         else
@@ -157,6 +168,11 @@ public class IconBehaviour : MonoBehaviour
                 rendererLowerBase.material.color = color;
 
                 BaseAxis.transform.localEulerAngles += new Vector3(0, baseStep, 0);
+
+                // scale
+                iconLowerBase.transform.localScale += new Vector3(scaling, scaling, scaling);
+                iconUpperBase.transform.localScale += new Vector3(scaling, scaling, scaling);
+
             }
             else
             {
@@ -169,6 +185,11 @@ public class IconBehaviour : MonoBehaviour
                 rendererLowerBase.material.color = color;
 
                 BaseAxis.transform.localEulerAngles -= new Vector3(0, baseStep, 0);
+
+                // scale
+                iconLowerBase.transform.localScale -= new Vector3(scaling, scaling, scaling);
+                iconUpperBase.transform.localScale -= new Vector3(scaling, scaling, scaling);
+
             }
         }
     }
@@ -182,14 +203,14 @@ public class IconBehaviour : MonoBehaviour
         {
             if (shoulderDir)
             {
-                color.r += colorIncrease;
+                //color.r += colorIncrease;
 
-                if (color.r >= 1)
-                    color.g -= colorIncrease;
+                //if (color.r >= 1)
+                //    color.g -= colorIncrease;
 
-                // apply color
-                rendererUpperShoulder.material.color = color;
-                rendererLowerShoulder.material.color = color;
+                //// apply color
+                //rendererUpperShoulder.material.color = color;
+                //rendererLowerShoulder.material.color = color;
 
                 ShoulderAxis.transform.localEulerAngles += new Vector3(0, 0, shoulderStep);
                 // Change direction if upper limit of 60° is reached
@@ -198,13 +219,13 @@ public class IconBehaviour : MonoBehaviour
             }
             else
             {
-                color.g += colorIncrease;
-                if (color.r >= 1)
-                    color.r -= colorIncrease;
+                //color.g += colorIncrease;
+                //if (color.r >= 1)
+                //    color.r -= colorIncrease;
 
-                // apply color
-                rendererUpperShoulder.material.color = color;
-                rendererLowerShoulder.material.color = color;
+                //// apply color
+                //rendererUpperShoulder.material.color = color;
+                //rendererLowerShoulder.material.color = color;
 
                 ShoulderAxis.transform.localEulerAngles -= new Vector3(0, 0, shoulderStep);
                 // Change direction if lower limit of -60° is reached
@@ -216,25 +237,25 @@ public class IconBehaviour : MonoBehaviour
         {
             if (shoulderDir)
             {
-                color.r += colorIncrease;
-                if (color.r >= 1)
-                    color.g -= colorIncrease;
+                //color.r += colorIncrease;
+                //if (color.r >= 1)
+                //    color.g -= colorIncrease;
 
-                // apply color
-                rendererUpperShoulder.material.color = color;
-                rendererLowerShoulder.material.color = color;
+                //// apply color
+                //rendererUpperShoulder.material.color = color;
+                //rendererLowerShoulder.material.color = color;
 
                 ShoulderAxis.transform.localEulerAngles += new Vector3(0, 0, shoulderStep);
             }
             else
             {
-                color.g += colorIncrease;
-                if (color.r >= 1)
-                    color.r -= colorIncrease;
+                //color.g += colorIncrease;
+                //if (color.r >= 1)
+                //    color.r -= colorIncrease;
 
-                // apply color
-                rendererUpperShoulder.material.color = color;
-                rendererLowerShoulder.material.color = color;
+                //// apply color
+                //rendererUpperShoulder.material.color = color;
+                //rendererLowerShoulder.material.color = color;
 
                 ShoulderAxis.transform.localEulerAngles -= new Vector3(0, 0, shoulderStep);
             }
@@ -263,6 +284,11 @@ public class IconBehaviour : MonoBehaviour
                 // Change direction if upper limit of 90° is reached
                 if (ElbowAxis.transform.localEulerAngles.z > 90 && ElbowAxis.transform.localEulerAngles.z < 90 + tolerance)
                     elbowDir = !elbowDir;
+
+                // scale
+                iconLowerElbow.transform.localScale += new Vector3(scaling, scaling, scaling);
+                iconUpperElbow.transform.localScale += new Vector3(scaling, scaling, scaling);
+
             }
             else
             {
@@ -271,13 +297,18 @@ public class IconBehaviour : MonoBehaviour
                     color.r -= colorIncrease;
 
                 // apply color
-                rendererUpperWristVertical.material.color = color;
+                rendererUpperElbow.material.color = color;
                 rendererLowerElbow.material.color = color;
 
                 ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, elbowStep);
                 // Change direction if lower limit of -90° is reached
                 if (ElbowAxis.transform.localEulerAngles.z < 270 && ElbowAxis.transform.localEulerAngles.z > 270 - tolerance)
                     elbowDir = !elbowDir;
+
+                // scale
+                iconLowerElbow.transform.localScale -= new Vector3(scaling, scaling, scaling);
+                iconUpperElbow.transform.localScale -= new Vector3(scaling, scaling, scaling);
+
             }
         }
         else
@@ -293,6 +324,11 @@ public class IconBehaviour : MonoBehaviour
                 rendererLowerElbow.material.color = color;
 
                 ElbowAxis.transform.localEulerAngles += new Vector3(0, 0, elbowStep);
+
+                // scale
+                iconLowerElbow.transform.localScale += new Vector3(scaling, scaling, scaling);
+                iconUpperElbow.transform.localScale += new Vector3(scaling, scaling, scaling);
+
             }
             else
             {
@@ -305,6 +341,11 @@ public class IconBehaviour : MonoBehaviour
                 rendererLowerElbow.material.color = color;
 
                 ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, elbowStep);
+
+                // scale
+                iconLowerElbow.transform.localScale -= new Vector3(scaling, scaling, scaling);
+                iconUpperElbow.transform.localScale -= new Vector3(scaling, scaling, scaling);
+
             }
         }
     }
@@ -332,6 +373,11 @@ public class IconBehaviour : MonoBehaviour
                 // Change direction if upper limit of 70° is reached
                 if (WristVerticalAxis.transform.localEulerAngles.z > 70 && WristVerticalAxis.transform.localEulerAngles.z < 70 + tolerance)
                     wristVerticalDir = !wristVerticalDir;
+
+                // scale
+                iconUpperWristVertical.transform.localScale += new Vector3(scaling, scaling, scaling);
+                iconLowerWristVertical.transform.localScale += new Vector3(scaling, scaling, scaling);
+
             }
             else
             {
@@ -347,6 +393,11 @@ public class IconBehaviour : MonoBehaviour
                 // Change direction if lower limit of -70° is reached
                 if (WristVerticalAxis.transform.localEulerAngles.z < 290 && WristVerticalAxis.transform.localEulerAngles.z > 290 - tolerance)
                     wristVerticalDir = !wristVerticalDir;
+
+                // scale
+                iconUpperWristVertical.transform.localScale -= new Vector3(scaling, scaling, scaling);
+                iconLowerWristVertical.transform.localScale -= new Vector3(scaling, scaling, scaling);
+
             }
         }
         else
@@ -362,6 +413,11 @@ public class IconBehaviour : MonoBehaviour
                 rendererLowerWristVertical.material.color = color;
 
                 WristVerticalAxis.transform.localEulerAngles += new Vector3(0, 0, wristVerticalStep);
+
+                // scale
+                iconUpperWristVertical.transform.localScale += new Vector3(scaling, scaling, scaling);
+                iconLowerWristVertical.transform.localScale += new Vector3(scaling, scaling, scaling);
+
             }
             else
             {
@@ -374,6 +430,11 @@ public class IconBehaviour : MonoBehaviour
                 rendererLowerWristVertical.material.color = color;
 
                 WristVerticalAxis.transform.localEulerAngles -= new Vector3(0, 0, wristVerticalStep);
+
+                // scale
+                iconUpperWristVertical.transform.localScale -= new Vector3(scaling, scaling, scaling);
+                iconLowerWristVertical.transform.localScale -= new Vector3(scaling, scaling, scaling);
+
             }
         }
     }
