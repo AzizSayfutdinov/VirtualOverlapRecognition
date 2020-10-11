@@ -109,7 +109,7 @@ public class IconBehaviour : MonoBehaviour
     {
         // Base from 0° to 180°
         // Debug.Log("Local Base.y: " + (BaseAxis.transform.localEulerAngles.y));
-        Debug.Log("Red: " + color.r);
+        // Debug.Log("Red: " + color.r);
 
         if (BaseAxis.transform.localEulerAngles.y >= 0 && BaseAxis.transform.localEulerAngles.y <= 180)
         {
