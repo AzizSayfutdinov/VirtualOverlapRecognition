@@ -27,7 +27,8 @@ public class followTrajectory : MonoBehaviour
     int tolerance = 10;     // degree
 
     // trajectory parameters
-    int numberOfSteps = 400; 
+    int numberOfSteps = 400;
+    int steps = 0;
 
     // Start is called before the first frame update
     void Start()
