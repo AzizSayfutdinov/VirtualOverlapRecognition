@@ -4,4 +4,4 @@ The goal is to visualize an overlap of a real modell with a virtual model with t
 Needed libarary for Braccio arduino robot: 
 Braccio.h
 #
-possible alternative: BraccioRobot
+possible alternative: BraccioRobot.h
