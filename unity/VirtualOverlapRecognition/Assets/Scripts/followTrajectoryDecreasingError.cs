@@ -10,6 +10,17 @@ public class followTrajectoryDecreasingError : MonoBehaviour
     Transform ElbowAxis;
     Transform WristVerticalAxis;
 
+    // Transforms of reference model
+    public GameObject BaseAxisRefObj;
+    public GameObject ShoulderAxisRefObj;
+    public GameObject ElbowAxisRefObj;
+    public GameObject WristVerticalAxisRefObj;
+
+    Transform BaseAxisRef;
+    Transform ShoulderAxisRef;
+    Transform ElbowAxisRef;
+    Transform WristVerticalAxisRef;
+
     // Directions: true - increases angle & false - decreases angle
     bool baseDir = true;
     bool shoulderDir = false;
@@ -36,10 +47,10 @@ public class followTrajectoryDecreasingError : MonoBehaviour
     float step = 0;
 
     // error steps
-    float baseErrorStep = 1;
-    float shoulderErrorStep;
-    float elbowErrorStep;
-    float wristVerticalErrorStep;
+    float baseErrorStep = 2;
+    float shoulderErrorStep = 2;
+    float elbowErrorStep = 2;
+    float wristVerticalErrorStep = 2;
 
     int steps = 0;
 
@@ -51,6 +62,12 @@ public class followTrajectoryDecreasingError : MonoBehaviour
         ShoulderAxis = BaseAxis.transform.Find("ShoulderAxis");
         ElbowAxis = ShoulderAxis.transform.Find("ElbowAxis");
         WristVerticalAxis = ElbowAxis.transform.Find("WristVerticalAxis");
+
+        // instantiate ref axis
+        BaseAxisRef = BaseAxisRefObj.transform;
+        ShoulderAxisRef = ShoulderAxisRefObj.transform;
+        ElbowAxisRef = ElbowAxisRefObj.transform;
+        WristVerticalAxisRef = WristVerticalAxisRefObj.transform;
 
         // Set model to initial position
         BaseAxis.transform.localEulerAngles = new Vector3(0, 0, 0);
@@ -64,28 +81,41 @@ public class followTrajectoryDecreasingError : MonoBehaviour
         elbowStep = 180f / numberOfSteps;
         wristVerticalStep = 140f / numberOfSteps;
 
-        // calculate error steps
-        float baseErrorStep = baseError / numberOfSteps;
-        float shoulderErrorStep = shoulderError / numberOfSteps;
-        float elbowErrorStep = elbowError / numberOfSteps;
-        float wristVerticalErrorStep = wristVerticalError / numberOfSteps;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        // run trajectory
-        baseTrajectory();
-        shoulderTrajectory();
-        elbowTrajectory();
-        wristVerticalTrajectory();
 
-        // add error after each period
-        if (steps % 2*numberOfSteps == 0)   // war ein bug drin, nochmals probieren
+        // add error by taking angles of ref model into account
+        Vector3 anglesBaseRef = BaseAxisRef.transform.localEulerAngles;
+        Vector3 anglesShoulderRef = ShoulderAxisRef.transform.localEulerAngles;
+        Vector3 anglesElbowRef = ElbowAxisRef.transform.localEulerAngles;
+        Vector3 anglesWristVerticalRef = WristVerticalAxisRef.transform.localEulerAngles;
+
+        // set values
+        // rot axis: y
+        if(anglesBaseRef.y > 0)
         {
-            // decrease error
-            if (!(baseError < 0))
+            BaseAxis.transform.localEulerAngles = new Vector3(anglesBaseRef.x, anglesBaseRef.y + baseError, anglesBaseRef.z);
+        }
+        else
+        {
+            BaseAxis.transform.localEulerAngles = new Vector3(anglesBaseRef.x, anglesBaseRef.y - baseError, anglesBaseRef.z);
+        }
+        // rot axis: z
+        ShoulderAxis.transform.localEulerAngles = new Vector3(anglesShoulderRef.x, anglesShoulderRef.y, anglesShoulderRef.z + shoulderError);
+
+        // rot axis: z
+        ElbowAxis.transform.localEulerAngles = new Vector3(anglesElbowRef.x, anglesElbowRef.y, anglesElbowRef.z + elbowError);
+
+        // rot axis: z
+        WristVerticalAxis.transform.localEulerAngles = new Vector3(anglesWristVerticalRef.x, anglesWristVerticalRef.y, anglesWristVerticalRef.z + wristVerticalError);
+
+        // decrease error each period
+        if(steps % numberOfSteps == 0)
+        {
+            if (!(baseError <= 0))
             {
                 baseError -= baseErrorStep;
             }
@@ -94,26 +124,79 @@ public class followTrajectoryDecreasingError : MonoBehaviour
                 baseError = 0;
             }
             Debug.Log("baseError: " + baseError);
-            if (!(shoulderError < 0))
+
+            if (!(shoulderError <= 0))
+            {
                 shoulderError -= shoulderErrorStep;
-            if (!(elbowError < 0))
+            }
+            else
+            {
+                shoulderError = 0;
+            }
+            Debug.Log("shoulderError: " + shoulderError);
+
+            if (!(elbowError <= 0))
+            {
                 elbowError -= elbowErrorStep;
-            if (!(wristVerticalError < 0))
+            }
+            else
+            {
+                elbowError = 0;
+            }
+            Debug.Log("elbowError: " + elbowError);
+
+            if (!(wristVerticalError <= 0))
+            {
                 wristVerticalError -= wristVerticalErrorStep;
-
-            Vector3 currentAngles = BaseAxis.localEulerAngles;
-            BaseAxis.transform.localEulerAngles = new Vector3(currentAngles.x, currentAngles.y + baseError, currentAngles.z);
-            // BaseAxis.transform.localEulerAngles = new Vector3(0, 0 + baseError, 0);
-            Debug.Log("currentAngles.x: " + currentAngles.x);
-            Debug.Log("currentAngles.y: " + currentAngles.y);
-            Debug.Log("currentAngles.z: " + currentAngles.z);
-            //ShoulderAxis.transform.localEulerAngles = new Vector3(0, 0, 60);
-            //ElbowAxis.transform.localEulerAngles = new Vector3(0, 0, -90);
-            //WristVerticalAxis.transform.localEulerAngles = new Vector3(0, 0, -70);
-
+            }
+            else
+            {
+                wristVerticalError = 0;
+            }
+            Debug.Log("wristVerticalError: " + wristVerticalError);
         }
 
         steps++;
+
+        //// add error after each period
+        //if (steps % (2 * numberOfSteps) == 0)   // war ein bug drin, nochmals probieren
+        //{
+        //    // decrease error
+        //    if (!(baseError < 0))
+        //    {
+        //        baseError -= baseErrorStep;
+        //    }
+        //    else
+        //    {
+        //        baseError = 0;
+        //    }
+        //    Debug.Log("baseError: " + baseError);
+        //    if (!(shoulderError < 0))
+        //        shoulderError -= shoulderErrorStep;
+        //    if (!(elbowError < 0))
+        //        elbowError -= elbowErrorStep;
+        //    if (!(wristVerticalError < 0))
+        //        wristVerticalError -= wristVerticalErrorStep;
+
+        //    Vector3 currentAngles = BaseAxis.localEulerAngles;
+        //    // BaseAxis.transform.localEulerAngles = new Vector3(currentAngles.x, currentAngles.y + baseError, currentAngles.z);
+        //    // BaseAxis.transform.localEulerAngles = new Vector3(0, 0 + baseError, 0);
+
+        //    // BaseAxis.transform.localEulerAngles = new Vector3(0, 0 + baseError, 0);
+        //    // BaseAxis.transform.localEulerAngles = new Vector3(currentAngles.x, currentAngles.y, currentAngles.z);
+        //    BaseAxis.transform.localEulerAngles = new Vector3(currentAngles.x, currentAngles.y + baseError, currentAngles.z);
+
+
+        //    Debug.Log("currentAngles.x: " + currentAngles.x);
+        //    Debug.Log("currentAngles.y: " + currentAngles.y);
+        //    Debug.Log("currentAngles.z: " + currentAngles.z);
+        //    //ShoulderAxis.transform.localEulerAngles = new Vector3(0, 0, 60);
+        //    //ElbowAxis.transform.localEulerAngles = new Vector3(0, 0, -90);
+        //    //WristVerticalAxis.transform.localEulerAngles = new Vector3(0, 0, -70);
+
+        //}
+
+        //steps++;
 
     }
 
