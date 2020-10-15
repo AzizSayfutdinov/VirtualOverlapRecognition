@@ -27,7 +27,7 @@ public class followTrajectory : MonoBehaviour
     int tolerance = 10;     // degree
 
     // trajectory parameters
-    int numberOfSteps = 400;
+    int numberOfSteps = 120;
     int steps = 0;
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class followTrajectory : MonoBehaviour
         // Find all axis
         BaseAxis = transform.Find("BaseAxis");
         ShoulderAxis = BaseAxis.transform.Find("ShoulderAxis");
-        ElbowAxis = ShoulderAxis.transform.Find("ElbowAxis");
+        ElbowAxis = ShoulderAxis.transform.Find("ElbowAxis");   
         WristVerticalAxis = ElbowAxis.transform.Find("WristVerticalAxis");
 
         // Set model to initial position
