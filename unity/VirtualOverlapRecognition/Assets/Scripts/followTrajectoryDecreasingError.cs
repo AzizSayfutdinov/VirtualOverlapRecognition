@@ -37,7 +37,7 @@ public class followTrajectoryDecreasingError : MonoBehaviour
     int tolerance = 10;     // degree
 
     // trajectory parameters
-    int numberOfSteps = 400;
+    int numberOfSteps = 120;
 
     // errors in deg
     float baseError = 10;
@@ -48,9 +48,9 @@ public class followTrajectoryDecreasingError : MonoBehaviour
 
     // error steps
     float baseErrorStep = 2;
-    float shoulderErrorStep = 2;
-    float elbowErrorStep = 2;
-    float wristVerticalErrorStep = 2;
+    float shoulderErrorStep = 1;
+    float elbowErrorStep = 1f;
+    float wristVerticalErrorStep = 1;
 
     int steps = 0;
 

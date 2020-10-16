@@ -24,7 +24,7 @@ public class followTrajectoryWithOffset : MonoBehaviour
     int tolerance = 10;     // degree
 
     // trajectory parameters
-    int numberOfSteps = 402; 
+    int numberOfSteps = 200; 
 
     // Start is called before the first frame update
     void Start()

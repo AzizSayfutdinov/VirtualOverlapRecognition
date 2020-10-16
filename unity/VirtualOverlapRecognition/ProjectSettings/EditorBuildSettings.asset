@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/VirtualOverlapPrj.unity
+    guid: 8b1481b39596a4f4994f09936ff92df9
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 225613c7fbf4f2540bbfe94a2515b3b1,
       type: 2}
