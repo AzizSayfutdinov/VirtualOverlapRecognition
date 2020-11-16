@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53067399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WristRotationalAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 153657736}
   - component: {fileID: 153657735}
   - component: {fileID: 153657734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249845393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GripperObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2058,7 +2058,7 @@ GameObject:
   - component: {fileID: 306161814}
   - component: {fileID: 306161813}
   - component: {fileID: 306161812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2459,7 +2459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403792739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WristVerticalAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2491,7 +2491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414391103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BaseAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4973,7 +4973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 712197073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BaseObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5648,7 +5648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 871548405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElbowAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5963,7 +5963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 946065132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShoulderAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6113,7 +6113,7 @@ GameObject:
   - component: {fileID: 983330781}
   - component: {fileID: 983330780}
   - component: {fileID: 983330779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6286,7 +6286,7 @@ GameObject:
   - component: {fileID: 997304413}
   - component: {fileID: 997304412}
   - component: {fileID: 997304411}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6664,7 +6664,7 @@ GameObject:
   - component: {fileID: 1064583554}
   - component: {fileID: 1064583553}
   - component: {fileID: 1064583552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6914,7 +6914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095163620}
   - component: {fileID: 1095163619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TransparencyModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6945,7 +6945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095163618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: 0, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414391103}
@@ -7310,7 +7310,7 @@ GameObject:
   - component: {fileID: 1170964009}
   - component: {fileID: 1170964008}
   - component: {fileID: 1170964007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7887,7 +7887,7 @@ GameObject:
   - component: {fileID: 1263339274}
   - component: {fileID: 1263339273}
   - component: {fileID: 1263339272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8173,7 +8173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291248289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WristVerticalObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9219,7 +9219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1321683265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WristRotationalObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9254,7 +9254,7 @@ GameObject:
   - component: {fileID: 1348670819}
   - component: {fileID: 1348670818}
   - component: {fileID: 1348670817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10069,7 +10069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491172989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShoulderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10267,7 +10267,7 @@ GameObject:
   - component: {fileID: 1496156020}
   - component: {fileID: 1496156019}
   - component: {fileID: 1496156018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11719,6 +11719,89 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707124372}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1711996597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1711996600}
+  - component: {fileID: 1711996599}
+  - component: {fileID: 1711996598}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: GIFcamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1711996598
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711996597}
+  m_Enabled: 0
+--- !u!20 &1711996599
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711996597}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 100
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1711996600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711996597}
+  m_LocalRotation: {x: 0.9576623, y: 0.033782646, z: -0.25660476, w: 0.12607859}
+  m_LocalPosition: {x: 19.3, y: 37.7, z: 39.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 15, y: 210, z: 180}
 --- !u!1 &1714118249
 GameObject:
   m_ObjectHideFlags: 0
@@ -12744,7 +12827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1798849539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ElbowObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12873,7 +12956,7 @@ GameObject:
   - component: {fileID: 1831955212}
   - component: {fileID: 1831955211}
   - component: {fileID: 1831955210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13792,7 +13875,7 @@ GameObject:
   - component: {fileID: 1969402283}
   - component: {fileID: 1969402282}
   - component: {fileID: 1969402281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14818,7 +14901,7 @@ GameObject:
   - component: {fileID: 1982508249}
   - component: {fileID: 1982508248}
   - component: {fileID: 1982508247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15726,7 +15809,7 @@ GameObject:
   - component: {fileID: 2063755222}
   - component: {fileID: 2063755221}
   - component: {fileID: 2063755220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15819,7 +15902,7 @@ GameObject:
   - component: {fileID: 2065013825}
   - component: {fileID: 2065013824}
   - component: {fileID: 2065013823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
