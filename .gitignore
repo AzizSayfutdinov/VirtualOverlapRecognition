@@ -49,6 +49,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.jpg
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -57,6 +58,9 @@ ExportedObj/
 
 # Unity3D generated file on crash reports
 sysinfo.txt
+
+# my ignores
+./unity/VirtualOverlapRecognition/Library/ArtifactDB
 
 # Builds
 *.apk

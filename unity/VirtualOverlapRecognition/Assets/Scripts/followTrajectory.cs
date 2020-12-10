@@ -28,7 +28,10 @@ public class followTrajectory : MonoBehaviour
 
     // trajectory parameters
     int numberOfSteps = 400;
+    int numberOfPauseSteps = 80;    // short pause of motion after each period
+
     int steps = 0;
+    int pauseSteps = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +62,14 @@ public class followTrajectory : MonoBehaviour
     {
         // the runtime of trajectory is 4s: TODO: calculate needed stepsize
         // Base from 0° to 180°
+
+        // short pause after each period
+        while(pauseSteps > 0)
+        {
+            pauseSteps--;
+            return;
+        }
+
         baseTrajectory();
         shoulderTrajectory();
         elbowTrajectory();
@@ -78,7 +89,11 @@ public class followTrajectory : MonoBehaviour
                 BaseAxis.transform.localEulerAngles += new Vector3(0, baseStep, 0);
                 // Change direction if upper limit of 180° is reached
                 if (BaseAxis.transform.localEulerAngles.y > 180)
+                {
                     baseDir = !baseDir;
+                    pauseSteps = numberOfPauseSteps;
+                }
+
             }
             else
             {
@@ -86,7 +101,10 @@ public class followTrajectory : MonoBehaviour
                 // Change direction if lower limit of 0° is reached
                 // Check < 0 does not work, therefore check if within interval 350-360
                 if (BaseAxis.transform.localEulerAngles.y < 360 && BaseAxis.transform.localEulerAngles.y > 360 - tolerance)
+                {
                     baseDir = !baseDir;
+                    pauseSteps = numberOfPauseSteps;
+                }
             }
         }
         else
