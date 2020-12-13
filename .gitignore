@@ -61,6 +61,7 @@ sysinfo.txt
 
 # my ignores
 ./unity/VirtualOverlapRecognition/Library/ArtifactDB
+D:\FHV\Master\Forschungsprojekt\VirtualOverlapRecognition\unity\VuforiaSample1\Builds
 
 # Builds
 *.apk
