@@ -27,7 +27,7 @@ public class followTrajectory : MonoBehaviour
     int tolerance = 10;     // degree
 
     // trajectory parameters
-    int numberOfSteps = 200;
+    int numberOfSteps = 135;
     int numberOfPauseSteps = 80;    // short pause of motion after each period
 
     int steps = 0;
