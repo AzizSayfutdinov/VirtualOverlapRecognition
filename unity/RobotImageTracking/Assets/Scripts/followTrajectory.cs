@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class followTrajectory : MonoBehaviour
 {
+    // public
+    public bool start = true;
+
     // Variables
     Transform BaseAxis;
     Transform ShoulderAxis;
@@ -27,7 +30,7 @@ public class followTrajectory : MonoBehaviour
     int tolerance = 10;     // degree
 
     // trajectory parameters
-    int numberOfSteps = 135;
+    int numberOfSteps = 100;        // should be 135, but due to inconsistent fps rate, lower value -> 100
     int numberOfPauseSteps = 80;    // short pause of motion after each period
 
     int steps = 0;
@@ -46,13 +49,13 @@ public class followTrajectory : MonoBehaviour
         BaseAxis.transform.localEulerAngles = new Vector3(0, 0, 0);
         ShoulderAxis.transform.localEulerAngles = new Vector3(0, 0, 60);
         ElbowAxis.transform.localEulerAngles = new Vector3(0, 0, -90);
-        WristVerticalAxis.transform.localEulerAngles = new Vector3(0, 0, -70);
+        WristVerticalAxis.transform.localEulerAngles = new Vector3(0, 0, -90);
 
         // calculate stepSizes 
         baseStep = 180f / numberOfSteps;
         shoulderStep = 120f / numberOfSteps;
         elbowStep = 180f / numberOfSteps;
-        wristVerticalStep = 140f / numberOfSteps;
+        wristVerticalStep = 180f / numberOfSteps;
 
 
     }
@@ -194,22 +197,23 @@ public class followTrajectory : MonoBehaviour
     void wristVerticalTrajectory()
     {
         // Shoulder from 70° to -70°
+        double limitAngle = 90;
         // Debug.Log("Local Wrist vertical.z: " + (WristVerticalAxis.transform.localEulerAngles.z));
-        if (WristVerticalAxis.transform.localEulerAngles.z >= 0 && WristVerticalAxis.transform.localEulerAngles.z <= 70 ||
-            WristVerticalAxis.transform.localEulerAngles.z >= 290 && WristVerticalAxis.transform.localEulerAngles.z <= 360)
+        if (WristVerticalAxis.transform.localEulerAngles.z >= 0 && WristVerticalAxis.transform.localEulerAngles.z <= limitAngle ||
+            WristVerticalAxis.transform.localEulerAngles.z >= 360 - limitAngle && WristVerticalAxis.transform.localEulerAngles.z <= 360)
         {
             if (wristVerticalDir)
             {
                 WristVerticalAxis.transform.localEulerAngles += new Vector3(0, 0, wristVerticalStep);
                 // Change direction if upper limit of 70° is reached
-                if (WristVerticalAxis.transform.localEulerAngles.z > 70 && WristVerticalAxis.transform.localEulerAngles.z < 70 + tolerance)
+                if (WristVerticalAxis.transform.localEulerAngles.z > limitAngle && WristVerticalAxis.transform.localEulerAngles.z < limitAngle + tolerance)
                     wristVerticalDir = !wristVerticalDir;
             }
             else
             {
                 WristVerticalAxis.transform.localEulerAngles -= new Vector3(0, 0, wristVerticalStep);
                 // Change direction if lower limit of -70° is reached
-                if (WristVerticalAxis.transform.localEulerAngles.z < 290 && WristVerticalAxis.transform.localEulerAngles.z > 290 - tolerance)
+                if (WristVerticalAxis.transform.localEulerAngles.z < 360 - limitAngle && WristVerticalAxis.transform.localEulerAngles.z > 360 - limitAngle - tolerance)
                     wristVerticalDir = !wristVerticalDir;
             }
         }

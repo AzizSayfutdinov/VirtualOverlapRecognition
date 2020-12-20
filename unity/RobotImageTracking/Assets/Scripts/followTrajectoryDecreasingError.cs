@@ -158,46 +158,6 @@ public class followTrajectoryDecreasingError : MonoBehaviour
 
         steps++;
 
-        //// add error after each period
-        //if (steps % (2 * numberOfSteps) == 0)   // war ein bug drin, nochmals probieren
-        //{
-        //    // decrease error
-        //    if (!(baseError < 0))
-        //    {
-        //        baseError -= baseErrorStep;
-        //    }
-        //    else
-        //    {
-        //        baseError = 0;
-        //    }
-        //    Debug.Log("baseError: " + baseError);
-        //    if (!(shoulderError < 0))
-        //        shoulderError -= shoulderErrorStep;
-        //    if (!(elbowError < 0))
-        //        elbowError -= elbowErrorStep;
-        //    if (!(wristVerticalError < 0))
-        //        wristVerticalError -= wristVerticalErrorStep;
-
-        //    Vector3 currentAngles = BaseAxis.localEulerAngles;
-        //    // BaseAxis.transform.localEulerAngles = new Vector3(currentAngles.x, currentAngles.y + baseError, currentAngles.z);
-        //    // BaseAxis.transform.localEulerAngles = new Vector3(0, 0 + baseError, 0);
-
-        //    // BaseAxis.transform.localEulerAngles = new Vector3(0, 0 + baseError, 0);
-        //    // BaseAxis.transform.localEulerAngles = new Vector3(currentAngles.x, currentAngles.y, currentAngles.z);
-        //    BaseAxis.transform.localEulerAngles = new Vector3(currentAngles.x, currentAngles.y + baseError, currentAngles.z);
-
-
-        //    Debug.Log("currentAngles.x: " + currentAngles.x);
-        //    Debug.Log("currentAngles.y: " + currentAngles.y);
-        //    Debug.Log("currentAngles.z: " + currentAngles.z);
-        //    //ShoulderAxis.transform.localEulerAngles = new Vector3(0, 0, 60);
-        //    //ElbowAxis.transform.localEulerAngles = new Vector3(0, 0, -90);
-        //    //WristVerticalAxis.transform.localEulerAngles = new Vector3(0, 0, -70);
-
-        //}
-
-        //steps++;
-
     }
 
     void baseTrajectory()
