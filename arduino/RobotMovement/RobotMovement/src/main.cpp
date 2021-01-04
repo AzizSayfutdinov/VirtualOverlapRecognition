@@ -84,11 +84,11 @@ void loop()
         Braccio.ServoMovement(20, 0, 15, 180, 170, 0, 73);
 
         //Wait 1 second
-        delay(1000);
+        delay(10);
 
         Braccio.ServoMovement(20, 180, 165, 0, 0, 180, 10);
 
         //Wait 1 second
-        delay(1000);
+        delay(10);
     }
 }
