@@ -30,9 +30,9 @@ public class followTrajectory : MonoBehaviour
     int tolerance = 10;     // degree
 
     // trajectory parameters
-    int numberOfSteps = 97;        // real time robot period duration -> 3.5sec*30fps = 105 updates in 1 period. 
+    int numberOfSteps = 100;        // real time robot period duration -> 3.5sec*30fps = 105 updates in 1 period. 
                                     // for some reason model is still smaller, therefore 97
-    int numberOfPauseSteps = 10;    // short pause of motion after each period
+    int numberOfPauseSteps = 0;    // short pause of motion after each period
 
     int steps = 0;
     int pauseSteps = 0;

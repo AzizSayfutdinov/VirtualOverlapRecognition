@@ -57,14 +57,13 @@ public class followTrajectory : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         // the runtime of trajectory is 4s: TODO: calculate needed stepsize
         // Base from 0° to 180°
 
         // short pause after each period
-        while(pauseSteps > 0)
+        while (pauseSteps > 0)
         {
             pauseSteps--;
             return;
@@ -74,6 +73,25 @@ public class followTrajectory : MonoBehaviour
         shoulderTrajectory();
         elbowTrajectory();
         wristVerticalTrajectory();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //// the runtime of trajectory is 4s: TODO: calculate needed stepsize
+        //// Base from 0° to 180°
+
+        //// short pause after each period
+        //while(pauseSteps > 0)
+        //{
+        //    pauseSteps--;
+        //    return;
+        //}
+
+        //baseTrajectory();
+        //shoulderTrajectory();
+        //elbowTrajectory();
+        //wristVerticalTrajectory();
 
     }
 
