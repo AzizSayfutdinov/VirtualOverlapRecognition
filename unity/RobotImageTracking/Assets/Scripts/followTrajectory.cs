@@ -29,9 +29,28 @@ public class followTrajectory : MonoBehaviour
     // angle tolerance when checking for euwality
     int tolerance = 10;     // degree
 
+    // angle of movement for one period (3.6s)
+    float baseAngle = 180f;
+    float shoulderAngle = 120f;
+    float elbowAngle = 180f;
+    float wristVerticalAngle = 180f;
+
+    // angle of movement for 1 sec
+    float baseAngleSec;
+    float shoulderAngleSec;
+    float elbowAngleSec;
+    float wristVerticalAngleSec;
+
+    float durationOfRobotPeriod = 3.65f;
+
     // trajectory parameters
-    int numberOfSteps = 100;        // real time robot period duration -> 3.5sec*30fps = 105 updates in 1 period. 
-                                    // for some reason model is still smaller, therefore 97
+    // using Time.deltaTime
+    // robot movement duration for 1 period: ~3.6s
+    // number of steps in one period can be defined: 198
+    // number of steps in 1 sec: 198/3.6 = 55 
+
+    int numberOfSteps = 55;        
+                                   
     int numberOfPauseSteps = 0;    // short pause of motion after each period
 
     int steps = 0;
@@ -58,6 +77,11 @@ public class followTrajectory : MonoBehaviour
         elbowStep = 180f / numberOfSteps;
         wristVerticalStep = 180f / numberOfSteps;
 
+        // angle of movement for 1 sec
+        baseAngleSec = baseAngle / durationOfRobotPeriod;
+        shoulderAngleSec = shoulderAngle / durationOfRobotPeriod;
+        elbowAngleSec = elbowAngle / durationOfRobotPeriod;
+        wristVerticalAngleSec = wristVerticalAngle / durationOfRobotPeriod;
 
     }
 
@@ -90,7 +114,7 @@ public class followTrajectory : MonoBehaviour
         {
             if (baseDir)
             {
-                BaseAxis.transform.localEulerAngles += new Vector3(0, baseStep, 0);
+                BaseAxis.transform.localEulerAngles += new Vector3(0, baseAngleSec, 0) * Time.deltaTime;
                 // Change direction if upper limit of 180° is reached
                 if (BaseAxis.transform.localEulerAngles.y > 180)
                 {
@@ -101,7 +125,7 @@ public class followTrajectory : MonoBehaviour
             }
             else
             {
-                BaseAxis.transform.localEulerAngles -= new Vector3(0, baseStep, 0);
+                BaseAxis.transform.localEulerAngles -= new Vector3(0, baseAngleSec, 0) * Time.deltaTime;
                 // Change direction if lower limit of 0° is reached
                 // Check < 0 does not work, therefore check if within interval 350-360
                 if (BaseAxis.transform.localEulerAngles.y < 360 && BaseAxis.transform.localEulerAngles.y > 360 - tolerance)
@@ -115,11 +139,11 @@ public class followTrajectory : MonoBehaviour
         {
             if (baseDir)
             {
-                BaseAxis.transform.localEulerAngles += new Vector3(0, baseStep, 0);
+                BaseAxis.transform.localEulerAngles += new Vector3(0, baseAngleSec, 0) * Time.deltaTime;
             }
             else
             {
-                BaseAxis.transform.localEulerAngles -= new Vector3(0, baseStep, 0);
+                BaseAxis.transform.localEulerAngles -= new Vector3(0, baseAngleSec, 0) * Time.deltaTime;
             }
         }
     }
@@ -133,14 +157,14 @@ public class followTrajectory : MonoBehaviour
         {
             if (shoulderDir)
             {
-                ShoulderAxis.transform.localEulerAngles += new Vector3(0, 0, shoulderStep);
+                ShoulderAxis.transform.localEulerAngles += new Vector3(0, 0, shoulderAngleSec) * Time.deltaTime;
                 // Change direction if upper limit of 60° is reached
                 if (ShoulderAxis.transform.localEulerAngles.z > 60 && ShoulderAxis.transform.localEulerAngles.z < 60 + tolerance)
                     shoulderDir = !shoulderDir;
             }
             else
             {
-                ShoulderAxis.transform.localEulerAngles -= new Vector3(0, 0, shoulderStep);
+                ShoulderAxis.transform.localEulerAngles -= new Vector3(0, 0, shoulderAngleSec) * Time.deltaTime;
                 // Change direction if lower limit of -60° is reached
                 if (ShoulderAxis.transform.localEulerAngles.z < 300 && ShoulderAxis.transform.localEulerAngles.z > 300 - tolerance)
                     shoulderDir = !shoulderDir;
@@ -150,11 +174,11 @@ public class followTrajectory : MonoBehaviour
         {
             if (shoulderDir)
             {
-                ShoulderAxis.transform.localEulerAngles += new Vector3(0, 0, shoulderStep);
+                ShoulderAxis.transform.localEulerAngles += new Vector3(0, 0, shoulderAngleSec) * Time.deltaTime;
             }
             else
             {
-                ShoulderAxis.transform.localEulerAngles -= new Vector3(0, 0, shoulderStep);
+                ShoulderAxis.transform.localEulerAngles -= new Vector3(0, 0, shoulderAngleSec) * Time.deltaTime;
             }
         }
     }
@@ -168,14 +192,14 @@ public class followTrajectory : MonoBehaviour
         {
             if (elbowDir)
             {
-                ElbowAxis.transform.localEulerAngles += new Vector3(0, 0, elbowStep);
+                ElbowAxis.transform.localEulerAngles += new Vector3(0, 0, elbowAngleSec) * Time.deltaTime;
                 // Change direction if upper limit of 90° is reached
                 if (ElbowAxis.transform.localEulerAngles.z > 90 && ElbowAxis.transform.localEulerAngles.z < 90 + tolerance)
                     elbowDir = !elbowDir;
             }
             else
             {
-                ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, elbowStep);
+                ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, elbowAngleSec) * Time.deltaTime;
                 // Change direction if lower limit of -90° is reached
                 if (ElbowAxis.transform.localEulerAngles.z < 270 && ElbowAxis.transform.localEulerAngles.z > 270 - tolerance)
                     elbowDir = !elbowDir;
@@ -185,11 +209,11 @@ public class followTrajectory : MonoBehaviour
         {
             if (elbowDir)
             {
-                ElbowAxis.transform.localEulerAngles += new Vector3(0, 0, elbowStep);
+                ElbowAxis.transform.localEulerAngles += new Vector3(0, 0, elbowAngleSec) * Time.deltaTime;
             }
             else
             {
-                ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, elbowStep);
+                ElbowAxis.transform.localEulerAngles -= new Vector3(0, 0, elbowAngleSec) * Time.deltaTime;
             }
         }
     }
@@ -205,14 +229,14 @@ public class followTrajectory : MonoBehaviour
         {
             if (wristVerticalDir)
             {
-                WristVerticalAxis.transform.localEulerAngles += new Vector3(0, 0, wristVerticalStep);
+                WristVerticalAxis.transform.localEulerAngles += new Vector3(0, 0, wristVerticalAngleSec) * Time.deltaTime;
                 // Change direction if upper limit of 70° is reached
                 if (WristVerticalAxis.transform.localEulerAngles.z > limitAngle && WristVerticalAxis.transform.localEulerAngles.z < limitAngle + tolerance)
                     wristVerticalDir = !wristVerticalDir;
             }
             else
             {
-                WristVerticalAxis.transform.localEulerAngles -= new Vector3(0, 0, wristVerticalStep);
+                WristVerticalAxis.transform.localEulerAngles -= new Vector3(0, 0, wristVerticalAngleSec) * Time.deltaTime;
                 // Change direction if lower limit of -70° is reached
                 if (WristVerticalAxis.transform.localEulerAngles.z < 360 - limitAngle && WristVerticalAxis.transform.localEulerAngles.z > 360 - limitAngle - tolerance)
                     wristVerticalDir = !wristVerticalDir;
@@ -222,11 +246,11 @@ public class followTrajectory : MonoBehaviour
         {
             if (wristVerticalDir)
             {
-                WristVerticalAxis.transform.localEulerAngles += new Vector3(0, 0, wristVerticalStep);
+                WristVerticalAxis.transform.localEulerAngles += new Vector3(0, 0, wristVerticalAngleSec) * Time.deltaTime;
             }
             else
             {
-                WristVerticalAxis.transform.localEulerAngles -= new Vector3(0, 0, wristVerticalStep);
+                WristVerticalAxis.transform.localEulerAngles -= new Vector3(0, 0, wristVerticalAngleSec) * Time.deltaTime;
             }
         }
     }
